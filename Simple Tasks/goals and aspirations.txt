@@ -1,0 +1,4 @@
+I want to improve my programming skills in Python
+This is why I am writing this document
+
+Idk if it can detect the newline character here
