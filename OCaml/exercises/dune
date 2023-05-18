@@ -1,0 +1,3 @@
+(executable
+ (name     tail_list)
+ (libraries base stdio))
