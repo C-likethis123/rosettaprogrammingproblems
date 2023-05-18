@@ -17,3 +17,23 @@ let more_languages = "French" :: languages;;
 let concat = [1;2;3] @ [4;5;6];;
 let () =
   printf "%d\n" (List.length languages);;
+
+(* use List.iter to call a simple function on every lement of a list, using a ref to accumulate results. *)
+
+(* For and while loops *)
+let permute array =
+  let length = Array.length array in 
+  for i = 0 to length - 2 in
+    let j = i + Random.int (length - i) in
+    let tmp = array.(i) in
+    array.(i) <- array.(j);
+    array.(j) <- tmp
+  done;;
+
+(* While loops - logical operators short circuits *)
+let find_first_negative_entry array =
+  let pos = ref 0 in
+  while !pos < Array.length array && array.(!pos) >= 0 do
+    pos := !pos + 1
+  done;
+  if !pos = Array.length array then None else Some !pos;;
