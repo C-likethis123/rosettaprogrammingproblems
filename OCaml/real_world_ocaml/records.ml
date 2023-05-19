@@ -145,3 +145,5 @@ time: 2017-07-21 15:11:45.000000000Z
 user: yminsky
 credentials: Xy2d9W
 - : unit = () *)
+
+(* Helps to adapt the code when fields of a record change *)

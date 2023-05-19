@@ -1,0 +1,13 @@
+opam-version: "2.0"
+name: "ocaml"
+version: "0.1.0"
+maintainer: "Chow Jia Ying <chowjiaying211@gmail.com>"
+authors: ["Chow Jia Ying <chowjiaying211@gmail.com>"]
+license: ["MIT"]
+build: [["jbuilder" "build" "-p" name "-j" jobs]]
+depends: [
+  "jbuilder" {build}
+  "opium"
+  "alcotest" {test}
+]
+run-test: ["jbuilder" "runtest" "-p" name "-j" jobs]
