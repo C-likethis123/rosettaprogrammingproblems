@@ -121,3 +121,27 @@ end
    - setter: None if it's not mutable, Some f if it is
  *)
 Field.get Logon.Fields.user;
+
+(* Writing a generic function for displaying a record field *)
+let show_field field to_string record =
+  let name = Field.name field in
+  let field_string = to_string (Field.get field record) in
+  name ": " ^ field_string;;
+
+(* Printing out all fields of a Logon record *)
+let print_logon logon =
+  let print to_string field =
+    printf "%s\n" (show_field field to_string logon)
+  in
+  Logon.Fields.iter
+    ~session_id:(print Fn.id)
+    ~time:(print Time_ns.to_string)
+    ~user:(print Fn.id)
+    ~credentials:(print Fn.id);;
+val print_logon : Logon.t -> unit = <fun>
+print_logon logon;;
+(* session_id: 26685
+time: 2017-07-21 15:11:45.000000000Z
+user: yminsky
+credentials: Xy2d9W
+- : unit = () *)

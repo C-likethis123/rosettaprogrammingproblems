@@ -10,3 +10,5 @@ let last_character str =
 let string_of_bool = function
   | true -> "true" 
   | false -> "false";;
+
+  
