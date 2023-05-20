@@ -29,3 +29,10 @@ let is_inside point element =
 (* Anonymous functions *)
 List.exists scene
 ~f:(fun el -> is_inside_scene_element point el);;
+
+(* A variant is not a tuple though it looks like it. It expects n arguments instead of a n-tuple *)
+
+(* Explicitly create variants that contains tuples *)
+type tupled = Tupled of (int * int);;
+
+(* TODO: polymorphic variants *)

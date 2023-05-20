@@ -146,4 +146,4 @@ user: yminsky
 credentials: Xy2d9W
 - : unit = () *)
 
-(* Helps to adapt the code when fields of a record change *)
+(* Helps to adapt the code when fields of a record change. Field iterators are useful for a variety of record-related tasks. *)
